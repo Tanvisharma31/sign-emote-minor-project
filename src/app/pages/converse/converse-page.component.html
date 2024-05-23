@@ -1,0 +1,8 @@
+<!-- converse-page.component.html -->
+
+<div class="converse-page">
+  <h1>Converse Page</h1>
+  <input type="text" (input)="onUserInput($event)" placeholder="Type something..." [(ngModel)]="userInput">
+  <p>Your input: {{ userInput }}</p>
+  <p>Response: {{ response }}</p>
+</div>

@@ -1,0 +1,42 @@
+/* converse-page.component.css */
+
+.converse-page {
+  padding: 20px;
+  text-align: center;
+}
+.converse-page{
+    max-width: 400px;
+    justify-self: center;
+    margin: auto;
+}
+.converse-page h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.converse-page input {
+  padding: 10px;
+  font-size: 16px;
+}
+
+.converse-page input[type="text"] {
+  width: 100%;
+}
+
+.converse-page input[type="text"]:focus {
+  outline: white;
+}
+
+.converse-page input[type="submit"] {
+  padding: 10px 20px;
+  font-size: 16px;
+}
+p{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 10px;
+    background-color: white;
+}

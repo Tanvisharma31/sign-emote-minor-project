@@ -63,7 +63,7 @@ describe('TranslateComponent', () => {
     expect(document.title).toEqual('תרגום סימנים');
 
     transloco.setActiveLang('en');
-    expect(document.title).toEqual('Sign Translate');
+    expect(document.title).toEqual('Sign Emote');
   });
 
   });

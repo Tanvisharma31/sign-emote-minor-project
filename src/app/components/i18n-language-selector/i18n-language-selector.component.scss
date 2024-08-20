@@ -11,6 +11,10 @@ select {
     color: white;
 
     * {
+      /*
+      Only required for Windows, Chrome
+      https://github.com/Tanvisharma31/sign-emote-minor-project/54
+       */
       background: black;
     }
   }

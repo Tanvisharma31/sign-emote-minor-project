@@ -92,7 +92,7 @@ export class SignedLanguageOutputComponent extends BaseComponent implements OnIn
   }
 
   async onVideoError(event: ErrorEvent) {
-    // https://github.com/sign/translate/issues/127
+    // https://github.com/Tanvisharma31/sign-emote-minor-project/127
     if (this.safeVideoUrl === null) {
       return;
     }

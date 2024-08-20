@@ -6,5 +6,5 @@ import {Component} from '@angular/core';
   styleUrls: ['./settings-about.component.scss'],
 })
 export class SettingsAboutComponent {
-  legalPages: string[] = ['about'];
+  legalPages: string[] = ['terms', 'privacy', 'licenses'];
 }

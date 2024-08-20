@@ -1,0 +1,77 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": ["hello", "hi", "hey", "good morning", "good evening"],
+      "responses": [
+        "Hello! How can I assist you today?",
+        "Hi there! What can I help you with?",
+        "Hey! How can I support you today?"
+      ]
+    },
+    {
+      "tag": "sign_language_query",
+      "patterns": [
+        "What is sign language?",
+        "Tell me about sign language",
+        "How does sign language work?",
+        "What is sign language used for?",
+        "Can you explain sign language?"
+      ],
+      "responses": [
+        "Sign language is a visual language used by people who are deaf or hard of hearing. It uses hand signs, facial expressions, and body language to convey meaning. Would you like to learn how to sign specific words or phrases?",
+        "Sign language involves using hand shapes, movements, and facial expressions to communicate. It’s an important means of communication for the deaf community. Do you want to know more about how to use sign language?"
+      ]
+    },
+    {
+      "tag": "sign_language_translation",
+      "patterns": [
+        "How do I sign [word]?",
+        "Show me how to sign [word]",
+        "Can you translate [word] to sign language?",
+        "How do you sign [phrase]?",
+        "Translate [phrase] to sign language"
+      ],
+      "responses": [
+        "I can help with that! Please provide me with the word or phrase you want to translate into sign language.",
+        "Sure! Let me show you how to sign that. Could you specify the word or phrase you need?"
+      ]
+    },
+    {
+      "tag": "sign_language_help",
+      "patterns": [
+        "Help me with sign language",
+        "I need help with sign language",
+        "Can you assist me with sign language?",
+        "I’m having trouble with sign language",
+        "Help with signing"
+      ],
+      "responses": [
+        "I'm here to help! Let me know what specific assistance you need with sign language.",
+        "How can I assist you with sign language today? Please provide more details so I can help you better."
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": ["bye", "goodbye", "see you later", "farewell"],
+      "responses": [
+        "Goodbye! Have a great day!",
+        "See you later! Feel free to return if you have more questions.",
+        "Farewell! Take care and let me know if you need further assistance."
+      ]
+    },
+    {
+      "tag": "fallback",
+      "patterns": [
+        "I don’t understand",
+        "Can you explain that?",
+        "I’m not sure what you mean",
+        "Can you provide more details?"
+      ],
+      "responses": [
+        "I'm sorry, I didn't quite catch that. Can you please rephrase your question or provide more details?",
+        "I didn't understand that. Could you clarify your question or provide more context?"
+      ]
+    }
+  ]
+}

@@ -13,9 +13,10 @@ import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 import {TranslocoService} from '@ngneat/transloco';
 import {RouterTestingModule} from '@angular/router/testing';
 import {VideoState} from '../../core/modules/ngxs/store/video/video.state';
-import {HttpClientTestingModule} from '@angular/common/http/testing';
+import {provideHttpClientTesting} from '@angular/common/http/testing';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import {provideHttpClient} from '@angular/common/http';
 
 describe('TranslateComponent', () => {
   let store: Store;
@@ -25,16 +26,16 @@ describe('TranslateComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [TranslateComponent, LanguageSelectorComponent],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
       imports: [
         AppTranslocoTestingModule,
         MatTabsModule,
         MatTooltipModule,
         NoopAnimationsModule,
         NgxsModule.forRoot([SettingsState, TranslateState, VideoState], ngxsConfig),
-        HttpClientTestingModule,
         RouterTestingModule,
       ],
-      schemas: [CUSTOM_ELEMENTS_SCHEMA],
+      providers: [provideHttpClient(), provideHttpClientTesting()],
     }).compileComponents();
   });
 
@@ -63,7 +64,49 @@ describe('TranslateComponent', () => {
     expect(document.title).toEqual('תרגום סימנים');
 
     transloco.setActiveLang('en');
-    expect(document.title).toEqual('Sign Emote');
+    expect(document.title).toEqual('Sign-Emote');
   });
 
-  });
+  // TODO test state
+  //
+  // it('swapLanguages should turn spoken-to-signed to signed-to-spoken', () => {
+  //   component.spokenToSigned = true;
+  //   const spy = spyOn(component, 'setInputMode');
+  //
+  //   component.swapLanguages();
+  //
+  //   expect(component.spokenToSigned).toBeFalse();
+  //   expect(spy).toHaveBeenCalledWith('webcam');
+  // });
+  // it('swapLanguages should turn signed-to-spoken to spoken-to-signed', () => {
+  //   component.spokenToSigned = false;
+  //
+  //   component.swapLanguages();
+  //
+  //   expect(store.snapshot().translate.spokenToSigned).toBeTrue();
+  //   expect(component.spokenToSigned).toBeTrue();
+  // });
+  //
+  // for (const mode of ['text', 'upload']) {
+  //   it(`setInputMode "${mode}" should StopVideo`, () => {
+  //     const spy = spyOn(store, 'dispatch');
+  //
+  //     component.setInputMode(mode as InputMode);
+  //
+  //     expect(store.snapshot().translate.inputMode).toBe(mode);
+  //     expect(spy).toHaveBeenCalledOnceWith(StopVideo);
+  //   });
+  // }
+  //
+  // it('setInputMode "webcam" should StopVideo and StartCamera', () => {
+  //   component.inputMode = 'text';
+  //   const spy = spyOn(store, 'dispatch');
+  //
+  //   component.setInputMode('webcam');
+  //
+  //   expect(component.inputMode).toBe('webcam');
+  //   expect(spy.calls.count()).toBe(2);
+  //   expect(spy.calls.argsFor(0)[0]).toBe(StopVideo);
+  //   expect(spy.calls.argsFor(1)[0]).toBe(StartCamera);
+  // });
+});

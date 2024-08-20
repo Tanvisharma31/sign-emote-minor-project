@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "www",
+            "outputPath": "dist/sign-translate/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": ["zone.js"],
@@ -273,12 +273,16 @@
         "prerender": {
           "builder": "@angular-devkit/build-angular:prerender",
           "options": {
+            "discoverRoutes": true,
             "routes": [
               "/",
               "/about",
               "/about/languages",
               "/about/contribute",
-              "/about/tools"
+              "/about/tools",
+              "/legal/terms",
+              "/legal/privacy",
+              "/legal/licenses"
             ]
           },
           "configurations": {

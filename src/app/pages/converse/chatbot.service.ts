@@ -16,7 +16,7 @@ interface Intent {
 })
 export class ChatbotService {
   private intentsUrl = 'assets/intents.json';
-  private apiKey = 'AIzaSyBHPRnck0_q8JcYHHIPq89zVL-pLMd6FrQ';
+  private apiKey = 'AIzaSyB6_V1oo5F7p71g7jqlSYa2ZMymCpNmUww';
   private modelName = 'gemini-1.0-pro';
   private targetLanguage = 'en'; // Default language (English)
 
